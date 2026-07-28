@@ -1,75 +1,169 @@
-# React + TypeScript + Vite
+# Frontend Challenge Lab
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal frontend laboratory for solving UI challenges, experimenting with different technologies, and documenting implementation approaches.
 
-Currently, two official plugins are available:
+The main goal of this repository is to practice frontend development through real-world challenges while exploring different tools, libraries, and architectural approaches.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🧪 What I'm Exploring
 
-## React Compiler
+This lab may include challenges from different platforms and sources, such as:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [GreatFrontend](https://www.greatfrontend.com/)
+- [Frontend Mentor](https://www.frontendmentor.io/)
+- Other frontend challenges and UI ideas
 
-## Expanding the ESLint configuration
+Each challenge can be implemented using different approaches, allowing me to compare technologies and patterns rather than committing to a single stack.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Technologies & Libraries
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+The project is designed to experiment with technologies such as:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- React
+- TypeScript
+- Vite
+- Storybook
+- Vitest
+- React Testing Library
+- Playwright
+- Tailwind CSS
+- Chakra UI
+- Bootstrap
+- CSS / CSS Modules
+- Other frontend libraries and tools
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Not every challenge will use every technology. Each implementation is intentionally independent.
 
+## 📁 Project Structure
+
+```text
+src/
+├── challenges/
+│   ├── greatfrontend/
+│   ├── frontend-mentor/
+│   └── other/
+│
+└── test/
+    └── setup.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Each challenge is self-contained and can include its own implementation, styles, Storybook stories, and tests.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+For example:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```text
+src/challenges/greatfrontend/autocomplete/
+├── vanilla/
+│   ├── Autocomplete.tsx
+│   ├── Autocomplete.stories.tsx
+│   ├── Autocomplete.test.tsx
+│   └── Autocomplete.css
+│
+├── tailwind/
+│   ├── Autocomplete.tsx
+│   ├── Autocomplete.stories.tsx
+│   └── Autocomplete.test.tsx
+│
+└── chakra/
+    ├── Autocomplete.tsx
+    ├── Autocomplete.stories.tsx
+    └── Autocomplete.test.tsx
 ```
+
+Shared components will only be extracted when there is a real need for reuse across multiple challenges.
+
+## 📚 Storybook
+
+Storybook acts as the visual catalog for the lab.
+
+It allows each challenge and implementation to be explored independently without having to navigate through the main application.
+
+Start Storybook with:
+
+```bash
+npm run storybook
+```
+
+Then open the local Storybook instance in your browser.
+
+## 🧪 Testing
+
+The project uses two complementary testing approaches.
+
+### Unit & Component Tests
+
+Built with:
+
+- Vitest
+- React Testing Library
+- jsdom
+- jest-dom
+
+Run unit tests with:
+
+```bash
+npm test -- --project=unit
+```
+
+### Storybook Tests
+
+Storybook stories can also be tested through the browser using:
+
+- Vitest
+- Storybook
+- Playwright
+- Chromium
+
+This allows interaction and UI behavior to be tested in a real browser environment.
+
+## 🚀 Getting Started
+
+Clone the repository:
+
+```bash
+git clone <repository-url>
+cd frontend-challenge-lab
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Start Storybook:
+
+```bash
+npm run storybook
+```
+
+Run the unit tests:
+
+```bash
+npm test -- --project=unit
+```
+
+## 🎯 Goals
+
+This repository is primarily a learning and experimentation space.
+
+Some of the goals are:
+
+- Practice frontend challenges consistently.
+- Improve React and TypeScript skills.
+- Explore different UI libraries and styling approaches.
+- Compare multiple implementations of the same problem.
+- Practice component architecture and reusable patterns.
+- Build accessible and responsive interfaces.
+- Write meaningful component and interaction tests.
+- Use Storybook as a living visual catalog.
+- Experiment with frontend tooling and development workflows.
+
+## 📌 Status
+
+This is an ongoing personal lab. The structure, tools, and conventions may evolve as new challenges and experiments are added.
