@@ -1,0 +1,55 @@
+@use "../../../styles/_breakpoints.scss" as *;
+@use "../../../styles/_fonts.scss" as *;
+
+.testimonial-card {
+    max-width: 340px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: $font-noto-sans;
+    border-radius: 8px;
+    padding: 24px;
+    background-color: #fff;
+    margin: 0;
+    figcaption {
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        .avatar {
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+        .author-info {
+            display: inline-grid;
+            overflow-wrap: anywhere;
+            .author-name {
+                font-size: 18px;
+                line-height: 28px;
+            }
+            .author-username {
+                font-size: 14px;
+                line-height: 20px;
+                color: #525252;
+            }
+        }
+    }
+    blockquote {
+        font-size: 16px;
+        line-height: 24px;
+        color: #525252;
+        margin: 0;
+        p {
+            white-space: pre-line;
+        }
+    }
+}
