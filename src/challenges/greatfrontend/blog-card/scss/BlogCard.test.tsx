@@ -1,9 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { axe, toHaveNoViolations } from "jest-axe";
+import { axe } from "jest-axe";
 import { describe, expect, it } from "vitest";
 import BlogCard from "./BlogCard";
-
-expect.extend(toHaveNoViolations);
 
 const defaultProps = {
     imageUrl: "https://example.com/blog.jpg",
@@ -16,10 +14,12 @@ describe("BlogCard", () => {
     it("renders the title and description", () => {
         render(<BlogCard {...defaultProps} />);
         expect(screen.getByText(defaultProps.cardTitle)).toBeInTheDocument();
-        expect(screen.getByText(defaultProps.cardDescription)).toBeInTheDocument();
+        expect(
+            screen.getByText(defaultProps.cardDescription),
+        ).toBeInTheDocument();
     });
 
-    it("renders the avatar image when avatarUrl is provided", () => {
+    it("renders the blog image when imageUrl is provided", () => {
         const { container } = render(<BlogCard {...defaultProps} />);
         expect(container.querySelector("img")).toHaveAttribute(
             "src",
